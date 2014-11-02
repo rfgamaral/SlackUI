@@ -1,0 +1,9 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results and NuGet Packages
+Build/
+Packages/
