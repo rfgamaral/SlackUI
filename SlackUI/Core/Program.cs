@@ -22,10 +22,18 @@ namespace SlackUI {
         private const string CacheFolderName = "Cache";
         private const string LogFileName = "Chromium.log";
         private const string SettingsFileName = "settings.xml";
+        private const string SlackTeamAddress = "{0}.slack.com";
 
         #endregion
 
         #region Internal Properties
+
+        /*
+         * Active Slack team domain address.
+         */
+        internal static string ActiveSlackTeamAddress {
+            get { return String.Format(SlackTeamAddress, Settings.Data.InitialTeamToLoad); }
+        }
 
         /*
          * Full path for the application data folder.

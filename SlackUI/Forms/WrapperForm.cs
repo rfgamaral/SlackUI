@@ -18,7 +18,6 @@ namespace SlackUI {
         #region Private Fields
 
         private const string AboutBlankPage = "about:blank";
-        private const string SlackTeamUrl = "{0}.slack.com";
 
         private const uint SYSMENU_DEVTOOLS_ID = 0x1;
 
@@ -83,8 +82,8 @@ namespace SlackUI {
         private void chromium_NavStateChanged(object sender, CefSharp.NavStateChangedEventArgs e) {
             // Is the browser ready to load a page as the first page load?
             if(!e.CanGoBack && !e.CanGoForward && e.CanReload) {
-                // Load the initial Slack team page address
-                chromium.Load(String.Format(SlackTeamUrl, Program.Settings.Data.InitialTeamToLoad));
+                // Load the active Slack team domain address
+                chromium.Load(Program.ActiveSlackTeamAddress);
 
                 // Unsubscribe the navigation state changed event
                 chromium.NavStateChanged -= chromium_NavStateChanged;
