@@ -57,7 +57,7 @@ namespace SlackUI {
         private void continueButton_Click(object sender, EventArgs e) {
             // Save team domain if valid otherwise show team not found information dialog
             if(IsTeamDomainValid()) {
-                SlackTeamDomain = teamDomainTextBox.Text;
+                SlackTeamDomain = teamDomainTextBox.Text.ToLowerInvariant();
                 DialogResult = DialogResult.OK;
                 Close();
             } else {
