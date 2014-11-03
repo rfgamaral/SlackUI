@@ -143,6 +143,7 @@
       <DependentUpon>WrapperForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\Program.cs" />
+    <Compile Include="Handlers\BrowserKeyboardHandler.cs" />
     <Compile Include="Handlers\BrowserMenuHandler.cs" />
     <Compile Include="Controls\LinkLabelEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
