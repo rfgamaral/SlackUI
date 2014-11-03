@@ -111,7 +111,7 @@ namespace SlackUI {
         }
 
         /*
-         * Wrapper form form closing event handler.
+         * Wrapper form closing event handler.
          */
         private void WrapperForm_FormClosing(object sender, FormClosingEventArgs e) {
             // Release all chromium web browser resources
