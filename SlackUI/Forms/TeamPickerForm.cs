@@ -141,7 +141,7 @@ namespace SlackUI {
             }
 
             // Ignore the key press if it's an invalid character
-            if(!Char.IsControl(e.KeyChar) && !Regex.Match(e.KeyChar.ToString(), @"[a-z0-9\-\.]",
+            if(!Char.IsControl(e.KeyChar) && !Regex.Match(e.KeyChar.ToString(), @"[a-z0-9\-]",
                 RegexOptions.IgnoreCase).Success) {
                 e.Handled = true;
             }
@@ -153,7 +153,7 @@ namespace SlackUI {
         private void teamTextBox_TextChanged(object sender, System.EventArgs e) {
             // Validate the team text input and enable/disable the continue button accordingly
             continueButton.Enabled = !(teamDomainTextBox.Text.Equals(String.Empty)) && Regex.Match(teamDomainTextBox.Text,
-                @"^[a-z0-9]([a-z0-9\-\.]*[a-z0-9]|[a-z0-9])?$", RegexOptions.IgnoreCase).Success;
+                @"^[a-z0-9]([a-z0-9\-]*[a-z0-9]|[a-z0-9])?$", RegexOptions.IgnoreCase).Success;
         }
 
         #endregion
