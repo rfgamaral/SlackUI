@@ -12,10 +12,10 @@ namespace SlackUI {
 
     internal class BrowserMenuHandler : IMenuHandler {
 
-        #region Internal Methods
+        #region Public Methods
 
         /*
-         * Handler for the browser context menu.
+         * Handler for the browser on before context menu event.
          */
         public bool OnBeforeContextMenu(IWebBrowser browser) {
             // Disable the context menu
