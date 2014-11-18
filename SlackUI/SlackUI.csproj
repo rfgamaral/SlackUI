@@ -216,16 +216,6 @@
     <None Include="Resources\Scripts\SignInCleanup.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\cef.redist.3.1750.1738\build\cef.redist.targets" Condition="Exists('..\packages\cef.redist.3.1750.1738\build\cef.redist.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\cef.redist.3.1750.1738\build\cef.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.3.1750.1738\build\cef.redist.targets'))" />
-    <Error Condition="!Exists('..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.props'))" />
-    <Error Condition="!Exists('..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.targets'))" />
-    <Error Condition="!Exists('..\Packages\CefSharp.WinForms.33.0.2\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.WinForms.33.0.2\build\CefSharp.WinForms.props'))" />
-  </Target>
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
@@ -233,6 +223,16 @@
   <PropertyGroup>
     <PreBuildEvent>if $(ConfigurationName) == Release (xcopy /y /q "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\redist\$(PlatformName)\Microsoft.VC110.CRT\*.dll" "$(TargetDir)")</PreBuildEvent>
   </PropertyGroup>
+  <Import Project="..\Packages\cef.redist.3.1750.1738\build\cef.redist.targets" Condition="Exists('..\Packages\cef.redist.3.1750.1738\build\cef.redist.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\Packages\cef.redist.3.1750.1738\build\cef.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\cef.redist.3.1750.1738\build\cef.redist.targets'))" />
+    <Error Condition="!Exists('..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\Packages\CefSharp.WinForms.33.0.2\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.WinForms.33.0.2\build\CefSharp.WinForms.props'))" />
+  </Target>
   <Import Project="..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.targets" Condition="Exists('..\Packages\CefSharp.Common.33.0.2\build\CefSharp.Common.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
