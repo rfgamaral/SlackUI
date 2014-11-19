@@ -38,8 +38,8 @@ namespace SlackUI {
             // Initializes a new instance of the chromium web browser
             chromium = new ChromiumWebBrowser(AboutBlankPage) {
                 Dock = DockStyle.Fill,
-                KeyboardHandler = new BrowserKeyboardHandler(),
-                MenuHandler = new BrowserMenuHandler()
+                MenuHandler = new BrowserMenuHandler(),
+                RequestHandler = new BrowserRequestHandler()
             };
 
             // Subscribe to multiple chromium web browser events
