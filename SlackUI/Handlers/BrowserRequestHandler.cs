@@ -27,7 +27,7 @@ namespace SlackUI {
 
         public bool OnBeforeBrowse(IWebBrowser browser, IRequest request, bool isRedirect) {
             // Disable browser forward/back navigation with keyboard keys
-            if(request.TransitionType == (TransitionType.Explicit | TransitionType.ForwardBack)) {
+            if((request.TransitionType & TransitionType.ForwardBack) != 0) {
                 return true;
             }
 
