@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Project start date for AutoIncrementVersion: 2014/10/22 -->
-  <Import Project="..\Packages\CefSharp.WinForms.37.0.0-CI437\build\CefSharp.WinForms.props" Condition="Exists('..\Packages\CefSharp.WinForms.37.0.0-CI437\build\CefSharp.WinForms.props')" />
-  <Import Project="..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.props" Condition="Exists('..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.props')" />
+  <Import Project="..\Packages\CefSharp.WinForms.37.0.0-CI442\build\CefSharp.WinForms.props" Condition="Exists('..\Packages\CefSharp.WinForms.37.0.0-CI442\build\CefSharp.WinForms.props')" />
+  <Import Project="..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.props" Condition="Exists('..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -23,7 +23,7 @@
     <AssemblyVersionSettings>None.IncrementOnDemand.DateStamp.TimeStamp</AssemblyVersionSettings>
     <AssemblyFileVersionSettings>None.IncrementOnDemand.DateStamp.TimeStamp</AssemblyFileVersionSettings>
     <ConfigurationFilter>Release</ConfigurationFilter>
-    <NuGetPackageImportStamp>70fe3e15</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>d32e76ba</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -230,12 +230,12 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\Packages\cef.redist.x86.3.2062.1898\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\cef.redist.x86.3.2062.1898\build\cef.redist.x86.targets'))" />
     <Error Condition="!Exists('..\Packages\cef.redist.x64.3.2062.1898\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\cef.redist.x64.3.2062.1898\build\cef.redist.x64.targets'))" />
-    <Error Condition="!Exists('..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.props'))" />
-    <Error Condition="!Exists('..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.targets'))" />
-    <Error Condition="!Exists('..\Packages\CefSharp.WinForms.37.0.0-CI437\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.WinForms.37.0.0-CI437\build\CefSharp.WinForms.props'))" />
+    <Error Condition="!Exists('..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\Packages\CefSharp.WinForms.37.0.0-CI442\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\CefSharp.WinForms.37.0.0-CI442\build\CefSharp.WinForms.props'))" />
   </Target>
   <Import Project="..\Packages\cef.redist.x64.3.2062.1898\build\cef.redist.x64.targets" Condition="Exists('..\Packages\cef.redist.x64.3.2062.1898\build\cef.redist.x64.targets')" />
-  <Import Project="..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.targets" Condition="Exists('..\Packages\CefSharp.Common.37.0.0-CI437\build\CefSharp.Common.targets')" />
+  <Import Project="..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.targets" Condition="Exists('..\Packages\CefSharp.Common.37.0.0-CI442\build\CefSharp.Common.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
