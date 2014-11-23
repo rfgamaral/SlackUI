@@ -47,7 +47,7 @@ namespace SlackUI {
                     return new ResourceHandler {
                         Stream = new MemoryStream(Encoding.UTF8.GetBytes(webClient.DownloadString(request.Url) +
                             Properties.Resources.PageStyleOverride)),
-                        MimeType = webClient.ResponseHeaders["Content-Type"]
+                        MimeType = "text/css"
                     };
                 }
             }
