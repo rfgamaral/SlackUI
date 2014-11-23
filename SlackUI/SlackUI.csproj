@@ -126,7 +126,7 @@
   <ItemGroup>
     <Compile Include="Extensions\ControlExtension.cs" />
     <Compile Include="Handlers\BrowserLifeSpanHandler.cs" />
-    <Compile Include="Forms\DefaultForm.cs" />
+    <Compile Include="Forms\BaseForm.cs" />
     <Compile Include="Core\ApplicationSettings.cs" />
     <Compile Include="Core\NativeMethods.cs" />
     <Compile Include="Core\NotificationContext.cs" />
