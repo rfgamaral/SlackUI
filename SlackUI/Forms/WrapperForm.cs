@@ -39,6 +39,7 @@ namespace SlackUI {
             chromium = new ChromiumWebBrowser(AboutBlankPage) {
                 Dock = DockStyle.Fill,
                 MenuHandler = new BrowserMenuHandler(),
+                LifeSpanHandler = new BrowserLifeSpanHandler(),
                 RequestHandler = new BrowserRequestHandler()
             };
 

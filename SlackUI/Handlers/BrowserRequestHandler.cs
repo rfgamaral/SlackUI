@@ -6,7 +6,9 @@
 
 #endregion
 
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -19,6 +21,8 @@ namespace SlackUI {
         #region Private Fields
 
         private const string SignInUrl = "https://slack.com/signin";
+
+        private readonly string[] InternalLinkKeywords = { "chrome-devtools" };
 
         #endregion
 
@@ -61,9 +65,20 @@ namespace SlackUI {
                 return true;
             }
 
+            // Let the Chromium web browser handle any internal link
+            if(InternalLinkKeywords.Any(request.Url.Contains)) {
+                return false;
+            }
+
             // Load the active team address instead of the default sign-in page
             if(request.Url.Equals(SignInUrl)) {
                 browser.Load(Program.ActiveTeamAddress);
+                return true;
+            }
+
+            // Launch the default system browser for any link outside of team domain
+            if(!request.Url.Contains(Program.ActiveTeamAddress)) {
+                Process.Start(request.Url);
                 return true;
             }
 
