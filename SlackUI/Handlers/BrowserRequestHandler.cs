@@ -12,6 +12,12 @@ namespace SlackUI {
 
     internal class BrowserRequestHandler : IRequestHandler {
 
+        #region Private Fields
+
+        private const string SignInUrl = "https://slack.com/signin";
+
+        #endregion
+
         #region Public Methods
 
         public bool GetAuthCredentials(IWebBrowser browser, bool isProxy, string host, int port, string realm,
@@ -28,6 +34,12 @@ namespace SlackUI {
         public bool OnBeforeBrowse(IWebBrowser browser, IRequest request, bool isRedirect) {
             // Disable browser forward/back navigation with keyboard keys
             if((request.TransitionType & TransitionType.ForwardBack) != 0) {
+                return true;
+            }
+
+            // Load the active team address instead of the default sign-in page
+            if(request.Url.Equals(SignInUrl)) {
+                browser.Load(Program.ActiveTeamAddress);
                 return true;
             }
 
