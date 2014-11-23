@@ -29,9 +29,9 @@ namespace SlackUI {
         #region Internal Properties
 
         /*
-         * Active Slack team domain address.
+         * Active team domain address.
          */
-        internal static string ActiveSlackTeamAddress {
+        internal static string ActiveTeamAddress {
             get { return String.Format(SlackTeamAddress, Settings.Data.InitialTeamToLoad); }
         }
 

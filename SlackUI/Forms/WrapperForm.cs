@@ -83,8 +83,8 @@ namespace SlackUI {
         private void chromium_NavStateChanged(object sender, CefSharp.NavStateChangedEventArgs e) {
             // Is the browser ready to load a page as the first page load?
             if(!e.CanGoBack && !e.CanGoForward && e.CanReload) {
-                // Load the active Slack team domain address
-                chromium.Load(Program.ActiveSlackTeamAddress);
+                // Load the active team domain address
+                chromium.Load(Program.ActiveTeamAddress);
 
                 // Unsubscribe the navigation state changed event
                 chromium.NavStateChanged -= chromium_NavStateChanged;
