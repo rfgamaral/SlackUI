@@ -213,7 +213,7 @@
     <None Include="Resources\Images\PanelBackground.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Scripts\SignInCleanup.js" />
+    <None Include="Resources\Styles\PageStyleOverride.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

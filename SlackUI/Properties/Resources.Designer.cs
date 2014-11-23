@@ -91,22 +91,21 @@ namespace SlackUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type Cascading Style Sheet (CSS).
+        /// </summary>
+        internal static string PageStyleOverride {
+            get {
+                return ResourceManager.GetString("PageStyleOverride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap PanelBackground {
             get {
                 object obj = ResourceManager.GetObject("PanelBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to alert(document.querySelector(&quot;.header_nav&quot;));
-        ///document.querySelector(&quot;.header_nav&quot;).style.display = &apos;none&apos;;.
-        /// </summary>
-        internal static string SignInCleanup {
-            get {
-                return ResourceManager.GetString("SignInCleanup", resourceCulture);
             }
         }
         

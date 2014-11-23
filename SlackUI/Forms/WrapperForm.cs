@@ -63,12 +63,8 @@ namespace SlackUI {
         private void chromium_FrameLoadEnd(object sender, CefSharp.FrameLoadEndEventArgs e) {
             // Was the loaded page the first page load?
             if(!e.Url.Contains(AboutBlankPage)) {
-                // Clean up unnecessary elements from 'Sign In' path based pages
-                chromium.ExecuteScriptAsync(Properties.Resources.SignInCleanup);
-
                 // Remove the initial load overlay from the form
                 this.InvokeOnUiThreadIfRequired(() => {
-                    System.Threading.Thread.Sleep(100);
                     browserPanel.Controls.RemoveByKey("initialLoadOverlay");
                 });
 

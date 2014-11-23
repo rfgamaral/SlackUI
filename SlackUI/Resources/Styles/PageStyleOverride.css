@@ -1,0 +1,15 @@
+﻿header .header_links {
+    display: none !important;
+}
+
+#page {
+    min-height: 0 !important;
+}
+
+#page_contents {
+    padding-bottom: 0 !important;
+}
+
+#page_contents > .align_center:last-child {
+    display: none !important;
+}
