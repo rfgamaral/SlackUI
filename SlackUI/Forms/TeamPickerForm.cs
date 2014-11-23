@@ -34,7 +34,7 @@ namespace SlackUI {
         #region Private Fields
 
         private const string FindYourTeamUrl = "http://slack.com/signin/find";
-        private const string SlackTeamUrl = "http://{0}.slack.com";
+        private const string SlackTeamUrl = "https://{0}.slack.com";
 
         #endregion
 

@@ -22,7 +22,7 @@ namespace SlackUI {
         private const string CacheFolderName = "Cache";
         private const string LogFileName = "Chromium.log";
         private const string SettingsFileName = "settings.xml";
-        private const string SlackTeamAddress = "{0}.slack.com";
+        private const string SlackTeamAddress = "https://{0}.slack.com";
 
         #endregion
 
