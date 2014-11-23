@@ -1,4 +1,6 @@
-﻿header .header_links {
+﻿/* Clean up unnecessary elements from 'Sign In' pages. */
+
+header .header_links {
     display: none !important;
 }
 
@@ -13,6 +15,8 @@
 #page_contents > .align_center:last-child {
     display: none !important;
 }
+
+/* Remove Switch Team & Logout menu items. */
 
 #menu #add_team {
     display: none !important;
