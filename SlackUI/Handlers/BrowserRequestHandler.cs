@@ -20,17 +20,26 @@ namespace SlackUI {
 
         #region Public Methods
 
+        /*
+         * Handler for the browser get authentication credentials event.
+         */
         public bool GetAuthCredentials(IWebBrowser browser, bool isProxy, string host, int port, string realm,
             string scheme, ref string username, ref string password) {
             // Let the Chromium web browser handle the event
             return false;
         }
 
+        /*
+         * Handler for the browser get resource handler event.
+         */
         public ResourceHandler GetResourceHandler(IWebBrowser browser, IRequest request) {
             // Let the Chromium web browser handle the event
             return null;
         }
 
+        /*
+         * Handler for the browser on before browse event.
+         */
         public bool OnBeforeBrowse(IWebBrowser browser, IRequest request, bool isRedirect) {
             // Disable browser forward/back navigation with keyboard keys
             if((request.TransitionType & TransitionType.ForwardBack) != 0) {
@@ -47,20 +56,32 @@ namespace SlackUI {
             return false;
         }
 
+        /*
+         * Handler for the browser on before plugin load event.
+         */
         public bool OnBeforePluginLoad(IWebBrowser browser, string url, string policyUrl, IWebPluginInfo info) {
             // Let the Chromium web browser handle the event
             return false;
         }
 
+        /*
+         * Handler for the browser on before resource load event.
+         */
         public bool OnBeforeResourceLoad(IWebBrowser browser, IRequest request, IResponse response) {
             // Let the Chromium web browser handle the event
             return false;
         }
 
+        /*
+         * Handler for the browser on plugin crashed event.
+         */
         public void OnPluginCrashed(IWebBrowser browser, string pluginPath) {
             // No implementation required
         }
 
+        /*
+         * Handler for the browser on render process terminated event.
+         */
         public void OnRenderProcessTerminated(IWebBrowser browser, CefTerminationStatus status) {
             // No implementation required
         }
