@@ -42,7 +42,7 @@ namespace SlackUI {
          */
         public ResourceHandler GetResourceHandler(IWebBrowser browser, IRequest request) {
             // Inject custom CSS with overall page style overrides
-            if(Regex.Match(request.Url, @"rollup-plastic_\d+\.css", RegexOptions.IgnoreCase).Success) {
+            if(Regex.Match(request.Url, @"rollup-(plastic|\w+_core)_\d+\.css", RegexOptions.IgnoreCase).Success) {
                 using(WebClient webClient = new WebClient()) {
                     return new ResourceHandler {
                         Stream = new MemoryStream(Encoding.UTF8.GetBytes(webClient.DownloadString(request.Url) +

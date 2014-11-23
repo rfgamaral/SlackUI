@@ -13,3 +13,15 @@
 #page_contents > .align_center:last-child {
     display: none !important;
 }
+
+#menu #add_team {
+    display: none !important;
+}
+
+#menu #logout {
+    display: none !important;
+}
+
+#menu_items > .divider:nth-last-child(2) {
+    display: none !important;
+}
