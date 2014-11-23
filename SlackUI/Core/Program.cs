@@ -16,13 +16,18 @@ namespace SlackUI {
 
     internal static class Program {
 
+        #region Internal Fields
+
+        internal const string SlackTeamUrl = "https://{0}.slack.com";
+
+        #endregion
+
         #region Private Fields
 
         private const string BrowserSubprocessFileName = "CefSharp.BrowserSubprocess.exe";
         private const string CacheFolderName = "Cache";
         private const string LogFileName = "Chromium.log";
         private const string SettingsFileName = "settings.xml";
-        private const string SlackTeamUrl = "https://{0}.slack.com";
 
         #endregion
 

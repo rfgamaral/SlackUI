@@ -34,7 +34,6 @@ namespace SlackUI {
         #region Private Fields
 
         private const string FindYourTeamUrl = "http://slack.com/signin/find";
-        private const string SlackTeamUrl = "https://{0}.slack.com";
 
         #endregion
 
@@ -91,7 +90,7 @@ namespace SlackUI {
             HttpStatusCode statusCode = default(HttpStatusCode);
 
             // Create HEAD request for the picked team domain
-            WebRequest request = HttpWebRequest.Create(String.Format(SlackTeamUrl, teamDomainTextBox.Text));
+            WebRequest request = HttpWebRequest.Create(String.Format(Program.SlackTeamUrl, teamDomainTextBox.Text));
             request.Method = "HEAD";
 
             // Change the form state to "wait mode"
