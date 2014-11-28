@@ -7,10 +7,8 @@
 #endregion
 
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
 using CefSharp;
 
@@ -44,11 +42,7 @@ namespace SlackUI {
             // Inject custom CSS with overall page style overrides
             if(Regex.Match(request.Url, @"rollup-(plastic|\w+_core)_\d+\.css", RegexOptions.IgnoreCase).Success) {
                 using(WebClient webClient = new WebClient()) {
-                    return new ResourceHandler {
-                        Stream = new MemoryStream(Encoding.UTF8.GetBytes(webClient.DownloadString(request.Url) +
-                            Properties.Resources.PageStyleOverride)),
-                        MimeType = "text/css"
-                    };
+                    return ResourceHandler.FromString(webClient.DownloadString(request.Url), ".css");
                 }
             }
 
@@ -98,6 +92,14 @@ namespace SlackUI {
          * Handler for the browser on before resource load event.
          */
         public bool OnBeforeResourceLoad(IWebBrowser browser, IRequest request, IResponse response) {
+            // Let the Chromium web browser handle the event
+            return false;
+        }
+
+        /*
+         * Handler for the on certificate error event.
+         */
+        public bool OnCertificateError(IWebBrowser browser, CefErrorCode errorCode, string requestUrl) {
             // Let the Chromium web browser handle the event
             return false;
         }
