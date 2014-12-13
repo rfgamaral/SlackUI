@@ -26,6 +26,7 @@ namespace SlackUI {
 
         private const string BrowserSubprocessFileName = "CefSharp.BrowserSubprocess.exe";
         private const string CacheFolderName = "Cache";
+        private const string CookiesFolderName = "Cookies";
         private const string LogFileName = "Chromium.log";
         private const string SettingsFileName = "settings.xml";
 
@@ -101,6 +102,9 @@ namespace SlackUI {
                 CachePath = Path.Combine(AppDataPath, CacheFolderName),
                 LogFile = Path.Combine(AppDataPath, LogFileName)
             });
+
+            // Separate cookies storage location from the cache
+            Cef.SetCookiePath(Path.Combine(AppDataPath, CookiesFolderName), false);
 
             // Initialize a new instance of the wrapper form
             WrapperForm = new WrapperForm();
