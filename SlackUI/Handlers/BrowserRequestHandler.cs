@@ -42,7 +42,8 @@ namespace SlackUI {
             // Inject custom CSS with overall page style overrides
             if(Regex.Match(request.Url, @"rollup-(plastic|\w+_core)_\d+\.css", RegexOptions.IgnoreCase).Success) {
                 using(WebClient webClient = new WebClient()) {
-                    return ResourceHandler.FromString(webClient.DownloadString(request.Url), ".css");
+                    return ResourceHandler.FromString(webClient.DownloadString(request.Url) +
+                        Properties.Resources.PageStyleOverride, ".css");
                 }
             }
 
