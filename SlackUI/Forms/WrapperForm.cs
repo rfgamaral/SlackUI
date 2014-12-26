@@ -40,6 +40,7 @@ namespace SlackUI {
                 Dock = DockStyle.Fill,
                 MenuHandler = new BrowserMenuHandler(),
                 LifeSpanHandler = new BrowserLifeSpanHandler(),
+                ResourceHandler = new BrowserResourceHandler(),
                 RequestHandler = new BrowserRequestHandler()
             };
 

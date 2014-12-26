@@ -8,8 +8,6 @@
 
 using System.Diagnostics;
 using System.Linq;
-using System.Net;
-using System.Text.RegularExpressions;
 using CefSharp;
 
 namespace SlackUI {
@@ -33,22 +31,6 @@ namespace SlackUI {
             string scheme, ref string username, ref string password) {
             // Let the Chromium web browser handle the event
             return false;
-        }
-
-        /*
-         * Handler for the browser get resource handler event.
-         */
-        public ResourceHandler GetResourceHandler(IWebBrowser browser, IRequest request) {
-            // Inject custom CSS with overall page style overrides
-            if(Regex.Match(request.Url, @"rollup-(plastic|\w+_core)_\d+\.css", RegexOptions.IgnoreCase).Success) {
-                using(WebClient webClient = new WebClient()) {
-                    return ResourceHandler.FromString(webClient.DownloadString(request.Url) +
-                        Properties.Resources.PageStyleOverride, ".css");
-                }
-            }
-
-            // Let the Chromium web browser handle the event
-            return null;
         }
 
         /*
