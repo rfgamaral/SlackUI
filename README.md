@@ -12,6 +12,7 @@ SlackUI fills the missing gap on your Windows system with a dedicated Slack clie
  - Powered by the Chromium Embedded Framework (CEF).
  - Hide the application by minimizing to the notification area.
  - Sign in directly to your Slack team domain of choice.
+ - Open all external links with default system browser.
  - Persist all cookies, sessions and cache to the disk.
 
 ## Download
