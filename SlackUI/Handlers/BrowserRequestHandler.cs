@@ -20,7 +20,7 @@ namespace SlackUI {
 
         private readonly string[] InternalLinkKeywords = { "chrome-devtools" };
 
-        private bool _isSignedIn;
+        private bool IsSignedIn;
 
         #endregion
 
@@ -56,7 +56,7 @@ namespace SlackUI {
             }
 
             // If we have not fully logged in yet, continue to process all requests within Chromium
-            if (!_isSignedIn) {
+            if (!IsSignedIn) {
                 return false;
             }
 
@@ -68,7 +68,7 @@ namespace SlackUI {
 
             // Recognize when we have logged in successfully
             if (request.Url.Contains("/users.setActive")) {
-                _isSignedIn = true;
+                IsSignedIn = true;
             }
 
             // Let the Chromium web browser handle the event
