@@ -34,6 +34,32 @@ namespace SlackUI {
             WM_SYSCOMMAND = 0x112
         }
 
+        [Flags]
+        internal enum FlashInfoFlags : uint
+        {
+            FLASHW_STOP = 0,
+            FLASHW_CAPTION = 1,
+            FLASHW_TRAY = 2,
+            FLASHW_ALL = 3,
+            FLASHW_TIMER = 4,
+            FLASHW_TIMERNOFG = 12
+        };
+
+        #endregion
+
+        #region Internal Structs
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct FLASHWINFO
+        {
+            public uint cbSize;
+            public IntPtr hwnd;
+            public uint dwFlags;
+            public uint uCount;
+            public uint dwTimeout;
+        }
+
+
         #endregion
 
         #region Internal Methods
@@ -56,8 +82,19 @@ namespace SlackUI {
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         internal static extern IntPtr LoadCursor(IntPtr hInstance, IntPtr lpCursorName);
 
+        [return: MarshalAs(UnmanagedType.Bool)]
+        [DllImport("user32.dll")]
+        internal static extern bool FlashWindowEx(ref FLASHWINFO pwfi);
+
         #endregion
 
+        /// <summary>
+        /// A boolean value indicating whether the application is running on Windows 2000 or later.
+        /// </summary>
+        private static bool Win2000OrLater
+        {
+            get { return System.Environment.OSVersion.Version.Major >= 5; }
+        }
     }
 
 }

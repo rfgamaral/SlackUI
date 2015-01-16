@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace SlackUI {
@@ -27,6 +28,18 @@ namespace SlackUI {
 
             // Apply the native font to all controls contained in this form
             this.ApplyNativeFont();
+        }
+
+        protected void FlashWindow()
+        {
+            var fi = new NativeMethods.FLASHWINFO();
+            fi.cbSize = Convert.ToUInt32(Marshal.SizeOf(fi));
+            fi.hwnd = Handle;
+            fi.dwFlags = (uint)(NativeMethods.FlashInfoFlags.FLASHW_ALL | NativeMethods.FlashInfoFlags.FLASHW_TIMERNOFG);
+            fi.uCount = uint.MaxValue;
+            fi.dwTimeout = 0;
+
+            NativeMethods.FlashWindowEx(ref fi);
         }
 
         #endregion
