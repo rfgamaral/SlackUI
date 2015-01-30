@@ -83,7 +83,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel browserPanel;
+        internal System.Windows.Forms.Panel browserPanel;
         private System.Windows.Forms.Panel initialLoadOverlay;
         private System.Windows.Forms.ProgressBar loadingMarquee;
 

@@ -67,7 +67,12 @@ namespace SlackUI {
             if(!e.Url.Contains(AboutBlankPage)) {
                 // Remove the initial load overlay from the form
                 this.InvokeOnUiThreadIfRequired(() => {
-                    browserPanel.Controls.RemoveByKey("initialLoadOverlay");
+                    if(browserPanel.Controls.ContainsKey("initialLoadOverlay")) {
+                        browserPanel.Controls.RemoveByKey("initialLoadOverlay");
+                        if (!Program.Settings.Data.ShowOnStartup && (Program.WrapperForm.Tag == null || Program.WrapperForm.Tag.ToString() != "Initial Load")) { Program.WrapperForm.Hide(); }
+                        Program.WrapperForm.ShowInTaskbar = true;
+                        this.Opacity = 1;
+                    }
                 });
 
                 // Unsubscribe the frame load end event

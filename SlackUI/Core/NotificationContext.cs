@@ -70,9 +70,19 @@ namespace SlackUI {
             notifyIcon.Click += notifyIcon_Click;
             notifyIcon.DoubleClick += notifyIcon_DoubleClick;
 
-            // Show the wrapper form on startup?
-            if(Program.Settings.Data.ShowOnStartup) {
+            // Show the team picker form if no team has been set.
+            if (Program.Settings.Data.InitialTeamToLoad.Equals(String.Empty)) {
+                using (TeamPickerForm teamPickerForm = new TeamPickerForm()) {
+                    if (teamPickerForm.ShowDialog() == DialogResult.OK) {
+                        Program.Settings.Data.InitialTeamToLoad = teamPickerForm.SlackTeamDomain;
+                        Program.WrapperForm.Tag = "Initial Load";
+                        Program.WrapperForm.Show();
+                    }
+                }
+            } else if(Program.Settings.Data.ShowOnStartup) {
                 DisplayWrapperForm();
+            } else {
+                LoadFormWithoutDisplaying();
             }
         }
 
@@ -107,6 +117,14 @@ namespace SlackUI {
                     Program.WrapperForm.Show();
                     Program.WrapperForm.Activate();
                 }
+            }
+        }
+
+        private static void LoadFormWithoutDisplaying() {
+            if(Program.WrapperForm.browserPanel.Controls.ContainsKey("initialLoadOverlay")) {
+                Program.WrapperForm.Opacity = 0;
+                Program.WrapperForm.ShowInTaskbar = false;
+                Program.WrapperForm.Show();
             }
         }
 
