@@ -131,7 +131,7 @@ namespace SlackUI {
                 }
 
                 // Prevent the window height be less than the minimum allowed
-                if(Program.WrapperForm.MinimumSize.Height > windowSize.Width) {
+                if(Program.WrapperForm.MinimumSize.Height > windowSize.Height) {
                     windowSize = new Size(windowSize.Width, Program.WrapperForm.MinimumSize.Height);
                 }
 
