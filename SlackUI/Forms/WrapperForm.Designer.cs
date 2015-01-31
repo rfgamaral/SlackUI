@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WrapperForm));
             this.browserPanel = new System.Windows.Forms.Panel();
             this.initialLoadOverlay = new System.Windows.Forms.Panel();
             this.loadingMarquee = new System.Windows.Forms.ProgressBar();
@@ -69,7 +68,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 596);
             this.Controls.Add(this.browserPanel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = Properties.Resources.SlackUI;
             this.MinimumSize = new System.Drawing.Size(960, 635);
             this.Name = "WrapperForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

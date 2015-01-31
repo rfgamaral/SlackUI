@@ -7,8 +7,14 @@
 #endregion
 
 using System;
+using System.Data.Linq.Mapping;
+using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CefSharp;
 using CefSharp.WinForms;
+
 
 namespace SlackUI {
 
@@ -24,6 +30,8 @@ namespace SlackUI {
         private readonly ChromiumWebBrowser chromium;
 
         private FormWindowState previousWindowState;
+
+        private readonly Timer timer;
 
         #endregion
 
@@ -44,6 +52,11 @@ namespace SlackUI {
                 RequestHandler = new BrowserRequestHandler()
             };
 
+            timer = new Timer {Interval = 1000, Enabled = true};
+            timer.Tick += timer_Tick;
+            timer.Start();
+            
+
             // Subscribe to multiple chromium web browser events
             chromium.FrameLoadEnd += chromium_FrameLoadEnd;
             chromium.NavStateChanged += chromium_NavStateChanged;
@@ -53,6 +66,56 @@ namespace SlackUI {
 
             // Save the current window state as the previous one
             previousWindowState = WindowState;
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            const string js = "(function() { var xx = 0; $('.unread_highlight,.unread_just').each(function(x, e) { xx += + $(e).text(); }); return xx; })()";
+            try
+            {
+                Task<JavascriptResponse> task = chromium.EvaluateScriptAsync(js);
+                if (task == null)
+                {
+                    return;
+                }
+                task.ContinueWith(t =>
+                {
+                    if (!t.IsFaulted)
+                    {
+                        var response = t.Result;
+                        if (response.Success && response.Result is int)
+                        {
+                            UpdateIcon((int)response.Result);
+                        }
+                    }
+                }, TaskScheduler.FromCurrentSynchronizationContext());
+            }
+            catch
+            {
+            }
+        }
+
+        private int currentCount;
+        private void UpdateIcon(int count)
+        {
+            if (count > currentCount)
+            {
+                if (Visible)
+                {
+                    FlashWindow();
+                }
+                else
+                {
+                    NotificationContext.Instance.DisplayBalloon(string.Format("You have {0} unread message(s)\r\nClick here to open the main window", count));        
+                }
+            }
+
+            if (count != currentCount)
+            {
+                currentCount = count;
+                Icon = count > 0 ? Properties.Resources.SlackUI_Unread : Properties.Resources.SlackUI;
+                Text = count > 0 ? string.Format("SlackUI [{0} Unread]", count) : "SlackUI";
+            }
         }
 
         #endregion

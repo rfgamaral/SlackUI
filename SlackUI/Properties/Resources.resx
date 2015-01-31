@@ -133,10 +133,16 @@
   <data name="PanelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\PanelBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SlackUI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\slackui.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SlackUI16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons\SlackUI16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SlackUI16White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons\SlackUI16White.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SlackUI_Unread" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\SlackUI_Unread.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

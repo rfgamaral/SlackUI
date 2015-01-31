@@ -8,6 +8,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using CefSharp;
 using wyDay.Controls;
@@ -20,14 +21,28 @@ namespace SlackUI {
 
         private NotifyIcon notifyIcon;
 
+        private static NotificationContext instance;
+
         #endregion
+
+        
+
+        public static NotificationContext Instance
+        {
+            get { return instance ?? (instance = new NotificationContext()); }
+        }
+
+        public void DisplayBalloon(string message)
+        {
+            notifyIcon.ShowBalloonTip(30000, "SlackUI", message, ToolTipIcon.Info);
+        }
 
         #region Internal Constructors
 
         /*
          * Create a notification context with an icon and menu.
          */
-        internal NotificationContext() {
+        private NotificationContext() {
             // Create a VistaMenu control to stylize context menus
             VistaMenu vistaMenu = new VistaMenu();
 
@@ -69,11 +84,17 @@ namespace SlackUI {
             // Assign a click and double click event handler for the notification icon
             notifyIcon.Click += notifyIcon_Click;
             notifyIcon.DoubleClick += notifyIcon_DoubleClick;
+            notifyIcon.BalloonTipClicked += notifyIcon_BalloonTipClicked;
 
             // Show the wrapper form on startup?
             if(Program.Settings.Data.ShowOnStartup) {
                 DisplayWrapperForm();
             }
+        }
+
+        void notifyIcon_BalloonTipClicked(object sender, EventArgs e)
+        {
+            DisplayWrapperForm();
         }
 
         #endregion

@@ -155,22 +155,19 @@
     <Compile Include="Forms\TeamPickerForm.Designer.cs">
       <DependentUpon>TeamPickerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WrapperForm.resx">
-      <DependentUpon>WrapperForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Forms\TeamPickerForm.resx">
       <DependentUpon>TeamPickerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,9 +197,6 @@
     <None Include="Resources\Icons\SlackUI.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icons\SlackUI16White.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\AboutLogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Styles\PageStyleOverride.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\SlackUI_Unread.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

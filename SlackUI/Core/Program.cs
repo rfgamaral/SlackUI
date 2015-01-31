@@ -113,7 +113,7 @@ namespace SlackUI {
             Settings = new EasySettings<ApplicationSettings>(Path.Combine(AppDataPath, SettingsFileName), "Settings");
 
             // Run the application with a notification context
-            Application.Run(new NotificationContext());
+            Application.Run(NotificationContext.Instance);
         }
 
         #endregion
