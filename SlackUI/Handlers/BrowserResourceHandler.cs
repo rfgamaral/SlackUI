@@ -8,6 +8,7 @@
 
 using System.Net;
 using System.Text.RegularExpressions;
+using System.Threading;
 using CefSharp;
 
 namespace SlackUI {
@@ -23,8 +24,22 @@ namespace SlackUI {
             // Inject custom CSS with overall page style overrides
             if(Regex.Match(request.Url, @"rollup-(plastic|\w+_core)_\d+\.css", RegexOptions.IgnoreCase).Success) {
                 using(WebClient webClient = new WebClient()) {
-                    return ResourceHandler.FromString(webClient.DownloadString(request.Url) +
-                        Properties.Resources.PageStyleOverride, ".css");
+                    string pageStyle = string.Empty;
+                    int retryCount = 3;
+
+                    // Attempt to download the default page CSS
+                    do {
+                        try {
+                            pageStyle = webClient.DownloadString(request.Url);
+                            retryCount = 0;
+                        } catch(WebException) {
+                            Thread.Sleep(250);
+                            retryCount--;
+                        }
+                    } while(retryCount > 0);
+
+                    // Return the custom CSS resource
+                    return ResourceHandler.FromString(pageStyle + Properties.Resources.PageStyleOverride, ".css");
                 }
             }
 
