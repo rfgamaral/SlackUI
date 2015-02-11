@@ -109,6 +109,10 @@ namespace SlackUI {
             Program.Settings.Save();
         }
 
+        private void WrapperForm_Activated(object sender, System.EventArgs e) {
+            chromium.SetFocus(true);
+        }
+
         /*
          * Wrapper form closing event handler.
          */

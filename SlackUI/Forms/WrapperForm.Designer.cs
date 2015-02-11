@@ -75,6 +75,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SlackUI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WrapperForm_FormClosing);
+            this.Activated += new System.EventHandler(this.WrapperForm_Activated);
             this.browserPanel.ResumeLayout(false);
             this.initialLoadOverlay.ResumeLayout(false);
             this.ResumeLayout(false);
