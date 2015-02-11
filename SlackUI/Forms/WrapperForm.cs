@@ -48,6 +48,9 @@ namespace SlackUI {
             chromium.FrameLoadEnd += chromium_FrameLoadEnd;
             chromium.NavStateChanged += chromium_NavStateChanged;
 
+            // Immediately load the initial page (force handle to be created)
+            chromium.CreateControl();
+
             // Add the chromium web browser to the browser panel
             browserPanel.Controls.Add(chromium);
 
