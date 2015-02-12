@@ -15,6 +15,12 @@ namespace SlackUI {
 
     internal class BrowserResourceHandler : IResourceHandler {
 
+        #region Private Fields
+
+        private const int RetryRequestInterval = 250;
+
+        #endregion
+
         #region Public Methods
 
         /*
@@ -33,7 +39,7 @@ namespace SlackUI {
                             pageStyle = webClient.DownloadString(request.Url);
                             retryCount = 0;
                         } catch(WebException) {
-                            Thread.Sleep(250);
+                            Thread.Sleep(RetryRequestInterval);
                             retryCount--;
                         }
                     } while(retryCount > 0);
