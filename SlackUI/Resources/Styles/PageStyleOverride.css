@@ -29,3 +29,13 @@ header .header_links {
 #menu_items > .divider:nth-last-child(2) {
     display: none !important;
 }
+
+/* Remove Teams & Launch button. */
+
+header .header_nav #team_switcher {
+    display: none !important;
+}
+
+header .header_nav a[href='/messages'] {
+    display: none !important;
+}
