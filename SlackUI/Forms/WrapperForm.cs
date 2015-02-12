@@ -69,9 +69,9 @@ namespace SlackUI {
         private void chromium_FrameLoadEnd(object sender, CefSharp.FrameLoadEndEventArgs e) {
             // Was the loaded page the first page load?
             if(!e.Url.Contains(AboutBlankPage)) {
-                // Remove the initial load overlay from the form
+                // Remove the browser load overlay from the form
                 this.InvokeOnUiThreadIfRequired(() => {
-                    browserPanel.Controls["initialLoadOverlay"].Visible = false;
+                    browserPanel.Controls["browserLoadOverlay"].Visible = false;
                 });
 
                 // Unsubscribe the frame load end event
@@ -174,9 +174,9 @@ namespace SlackUI {
                     if((int)m.WParam == SYSMENU_DEVTOOLS_ID) {
                         chromium.ShowDevTools();
                     } else if((int)m.WParam == SYSMENU_RELOAD_ID) {
-                        // Add the initial load overlay to the form
+                        // Add the browser load overlay to the form
                         this.InvokeOnUiThreadIfRequired(() => {
-                            browserPanel.Controls["initialLoadOverlay"].Visible = true;
+                            browserPanel.Controls["browserLoadOverlay"].Visible = true;
                         });
 
                         // Subscribe the frame load end event
