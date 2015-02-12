@@ -17,7 +17,7 @@ namespace SlackUI {
 
         #region Private Fields
 
-        private const int RetryRequestInterval = 250;
+        private const int RetryRequestInterval = 500;
 
         #endregion
 
