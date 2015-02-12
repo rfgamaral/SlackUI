@@ -20,6 +20,7 @@ namespace SlackUI {
         private const string AboutBlankPage = "about:blank";
 
         private const uint SYSMENU_DEVTOOLS_ID = 0x1;
+        private const uint SYSMENU_RELOAD_ID = 0x2;
 
         private readonly ChromiumWebBrowser chromium;
 
@@ -70,7 +71,7 @@ namespace SlackUI {
             if(!e.Url.Contains(AboutBlankPage)) {
                 // Remove the initial load overlay from the form
                 this.InvokeOnUiThreadIfRequired(() => {
-                    browserPanel.Controls.RemoveByKey("initialLoadOverlay");
+                    browserPanel.Controls["initialLoadOverlay"].Visible = false;
                 });
 
                 // Unsubscribe the frame load end event
@@ -153,6 +154,9 @@ namespace SlackUI {
 
             // Add a separator followed by the DevTools menu item
             NativeMethods.AppendMenu(systemMenu, NativeMethods.MenuFlags.MF_SEPARATOR, UIntPtr.Zero, String.Empty);
+            NativeMethods.AppendMenu(systemMenu, NativeMethods.MenuFlags.MF_STRING, new UIntPtr(SYSMENU_RELOAD_ID),
+                "&Reload Team Site");
+            NativeMethods.AppendMenu(systemMenu, NativeMethods.MenuFlags.MF_SEPARATOR, UIntPtr.Zero, String.Empty);
             NativeMethods.AppendMenu(systemMenu, NativeMethods.MenuFlags.MF_STRING, new UIntPtr(SYSMENU_DEVTOOLS_ID),
                 "&Show DevTools…");
         }
@@ -165,10 +169,21 @@ namespace SlackUI {
 
             // Handles detected Windows messages
             switch(m.Msg) {
-                // Show DevTools if the respective item was selected from the system menu
+                // Invoke the respective actions according to the selected item from the system menu
                 case (int)NativeMethods.WindowsMessages.WM_SYSCOMMAND:
                     if((int)m.WParam == SYSMENU_DEVTOOLS_ID) {
                         chromium.ShowDevTools();
+                    } else if((int)m.WParam == SYSMENU_RELOAD_ID) {
+                        // Add the initial load overlay to the form
+                        this.InvokeOnUiThreadIfRequired(() => {
+                            browserPanel.Controls["initialLoadOverlay"].Visible = true;
+                        });
+
+                        // Subscribe the frame load end event
+                        chromium.FrameLoadEnd += chromium_FrameLoadEnd;
+
+                        // Force reload the current team page
+                        chromium.Reload();
                     }
 
                     break;
