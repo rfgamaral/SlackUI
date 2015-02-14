@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Slack for Windows - Unofficial, not affiliated with Slack Technologies.")]
 [assembly: AssemblyCompany("Ricardo Amaral")]
 [assembly: AssemblyProduct("SlackUI")]
-[assembly: AssemblyCopyright("Copyright © 2014 Ricardo Amaral")]
+[assembly: AssemblyCopyright("Copyright © 2014-2015 Ricardo Amaral")]
 
 [assembly: ComVisible(false)]
 
