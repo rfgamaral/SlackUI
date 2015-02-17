@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.headerPanel = new System.Windows.Forms.Panel();
             this.aboutLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.applicationVersionLabel = new System.Windows.Forms.Label();
@@ -159,7 +158,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.headerPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";

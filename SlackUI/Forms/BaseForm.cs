@@ -9,10 +9,11 @@ namespace SlackUI {
         #region Public Constructors
 
         /*
-         * Create an empty base form with native fonts applied.
+         * Create an empty base form with custom icon and native fonts applied.
          */
         public BaseForm()
             : base() {
+            Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
         }
 
         #endregion Public Constructors
