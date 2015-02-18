@@ -176,6 +176,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\Icons\SlackUI16.ico" />
   </ItemGroup>
   <ItemGroup>
