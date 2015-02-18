@@ -31,6 +31,15 @@ namespace SlackUI {
         #region Internal Properties
 
         /*
+         * Reminder for the application background running.
+         */
+        [EasySettingsAttribute("Miscellaneous", true)]
+        internal bool BackgroundRunningBalloon {
+            get;
+            set;
+        }
+
+        /*
          * The initial team domain to load on startup.
          */
         [EasySettingsAttribute("General", "")]

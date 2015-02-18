@@ -74,6 +74,17 @@ namespace SlackUI {
             if(Program.Settings.Data.ShowOnStartup) {
                 DisplayWrapperForm();
             }
+
+            // Remind the user that the application is running on the background?
+            if(Program.Settings.Data.BackgroundRunningBalloon && !Program.Settings.Data.ShowOnStartup) {
+                notifyIcon.BalloonTipClicked += delegate {
+                    Program.Settings.Data.BackgroundRunningBalloon = false;
+                };
+
+                notifyIcon.ShowBalloonTip(3000, "SlackUI is running on the background",
+                    "SlackUI started hidden and will continue to run so that you can receive real time updates while " +
+                    "signed in.\n\nTo stop showing this reminder, click here.", ToolTipIcon.Info);
+            }
         }
 
         #endregion
