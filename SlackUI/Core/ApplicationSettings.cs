@@ -33,7 +33,7 @@ namespace SlackUI {
         /*
          * Reminder for the application background running.
          */
-        [EasySettingsAttribute("Miscellaneous", true)]
+        [EasySettingsAttribute("Internal", true)]
         internal bool BackgroundRunningBalloon {
             get;
             set;
