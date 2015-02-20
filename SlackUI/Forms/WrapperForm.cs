@@ -85,8 +85,10 @@ namespace SlackUI {
         private void chromium_NavStateChanged(object sender, CefSharp.NavStateChangedEventArgs e) {
             // Is the browser ready to load a page as the first page load?
             if(!e.CanGoBack && !e.CanGoForward && e.CanReload) {
-                // Load the active team domain address
-                chromium.Load(Program.ActiveTeamAddress);
+                // Load the active team domain address if we have one
+                if(!Program.Settings.Data.InitialTeamToLoad.Equals(String.Empty)) {
+                    chromium.Load(Program.ActiveTeamAddress);
+                }
 
                 // Unsubscribe the navigation state changed event
                 chromium.NavStateChanged -= chromium_NavStateChanged;
@@ -174,16 +176,7 @@ namespace SlackUI {
                     if((int)m.WParam == SYSMENU_DEVTOOLS_ID) {
                         chromium.ShowDevTools();
                     } else if((int)m.WParam == SYSMENU_RELOAD_ID) {
-                        // Add the browser load overlay to the form
-                        this.InvokeOnUiThreadIfRequired(() => {
-                            browserPanel.Controls["browserLoadOverlay"].Visible = true;
-                        });
-
-                        // Subscribe the frame load end event
-                        chromium.FrameLoadEnd += chromium_FrameLoadEnd;
-
-                        // Force reload the current team page
-                        chromium.Reload();
+                        LoadActiveTeamSite();
                     }
 
                     break;
@@ -202,6 +195,26 @@ namespace SlackUI {
 
                     break;
             }
+        }
+
+        #endregion
+
+        #region Internal Methods
+
+        /*
+         * Load or reload the active team site with a loading overlay.
+         */
+        internal void LoadActiveTeamSite() {
+            // Add the browser load overlay to the form
+            this.InvokeOnUiThreadIfRequired(() => {
+                browserPanel.Controls["browserLoadOverlay"].Visible = true;
+            });
+
+            // Subscribe the frame load end event
+            chromium.FrameLoadEnd += chromium_FrameLoadEnd;
+
+            // Load the active team domain address
+            chromium.Load(Program.ActiveTeamAddress);
         }
 
         #endregion
