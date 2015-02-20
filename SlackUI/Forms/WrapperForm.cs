@@ -86,7 +86,7 @@ namespace SlackUI {
             // Is the browser ready to load a page as the first page load?
             if(!e.CanGoBack && !e.CanGoForward && e.CanReload) {
                 // Load the active team domain address if we have one
-                if(!Program.Settings.Data.InitialTeamToLoad.Equals(String.Empty)) {
+                if(Program.IsInitialTeamInitialized) {
                     chromium.Load(Program.ActiveTeamAddress);
                 }
 

@@ -106,7 +106,7 @@ namespace SlackUI {
                 Program.WrapperForm.Activate();
             } else {
                 // Prompt for initial team domain to load or shows the wrapper form
-                if(Program.Settings.Data.InitialTeamToLoad.Equals(String.Empty)) {
+                if(!Program.IsInitialTeamInitialized) {
                     using(TeamPickerForm teamPickerForm = new TeamPickerForm()) {
                         if(teamPickerForm.ShowDialog() == DialogResult.OK) {
                             // Store the initial team domain to load

@@ -50,6 +50,15 @@ namespace SlackUI {
         }
 
         /*
+         * Initial team to load initialized (not empty) state.
+         */
+        internal static bool IsInitialTeamInitialized {
+            get {
+                return !Settings.Data.InitialTeamToLoad.Equals(String.Empty);
+            }
+        }
+
+        /*
          * EasySettings instance to manage application settings.
          */
         internal static EasySettings<ApplicationSettings> Settings {
