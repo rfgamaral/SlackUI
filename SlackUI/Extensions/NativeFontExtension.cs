@@ -69,29 +69,6 @@ namespace SlackUI {
 
         #endregion
 
-        #region Internal Methods
-
-        /*
-         * Apply the native font to all controls contained in the referenced form.
-         */
-        internal static void ApplyNativeFont(this Form form) {
-            // Return immediately if fonts cannot be repaired
-            if(!canRepairFonts) {
-                return;
-            }
-
-            // Disable the form auto scale mode
-            form.AutoScaleMode = AutoScaleMode.None;
-
-            // Repair the font name on this form
-            form.Font = RepairFontName(form.Font);
-
-            // Repair the font name on this form controls
-            RepairControlsFontName(form.Controls);
-        }
-
-        #endregion
-
         #region Private Methods
 
         /*
@@ -162,6 +139,29 @@ namespace SlackUI {
 
             // Return the unchanged font
             return font;
+        }
+
+        #endregion
+
+        #region Internal Methods
+
+        /*
+         * Apply the native font to all controls contained in the referenced form.
+         */
+        internal static void ApplyNativeFont(this Form form) {
+            // Return immediately if fonts cannot be repaired
+            if(!canRepairFonts) {
+                return;
+            }
+
+            // Disable the form auto scale mode
+            form.AutoScaleMode = AutoScaleMode.None;
+
+            // Repair the font name on this form
+            form.Font = RepairFontName(form.Font);
+
+            // Repair the font name on this form controls
+            RepairControlsFontName(form.Controls);
         }
 
         #endregion
