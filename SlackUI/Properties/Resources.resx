@@ -127,11 +127,11 @@
   <data name="MenuItemSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icons\menuitemsettings.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NotifyColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\NotifyColor.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NotificationColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\notificationcolor.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NotifyWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\NotifyWhite.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NotificationWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\notificationwhite.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PageStyleOverride" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Styles\PageStyleOverride.css;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

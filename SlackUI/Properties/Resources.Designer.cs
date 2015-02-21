@@ -93,9 +93,9 @@ namespace SlackUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon NotifyColor {
+        internal static System.Drawing.Icon NotificationColor {
             get {
-                object obj = ResourceManager.GetObject("NotifyColor", resourceCulture);
+                object obj = ResourceManager.GetObject("NotificationColor", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace SlackUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon NotifyWhite {
+        internal static System.Drawing.Icon NotificationWhite {
             get {
-                object obj = ResourceManager.GetObject("NotifyWhite", resourceCulture);
+                object obj = ResourceManager.GetObject("NotificationWhite", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

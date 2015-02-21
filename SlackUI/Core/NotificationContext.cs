@@ -62,7 +62,8 @@ namespace SlackUI {
             notifyIcon = new NotifyIcon() {
                 ContextMenu = contextMenuNotifyIcon,
                 Icon = new Icon(Program.Settings.Data.WhiteNotificationIcon ?
-                    Properties.Resources.NotifyWhite : Properties.Resources.NotifyColor, SystemInformation.SmallIconSize),
+                    Properties.Resources.NotificationWhite : Properties.Resources.NotificationColor,
+                    SystemInformation.SmallIconSize),
                 Text = Application.ProductName,
                 Visible = true,
             };

@@ -214,10 +214,10 @@
     <None Include="Resources\Styles\PageStyleOverride.css" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icons\NotifyColor.ico" />
+    <None Include="Resources\Icons\NotificationColor.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icons\NotifyWhite.ico" />
+    <None Include="Resources\Icons\NotificationWhite.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons\MenuItemAbout.ico" />
