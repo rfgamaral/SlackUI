@@ -208,12 +208,6 @@
     <None Include="Resources\Images\AboutLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\MenuAboutIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\MenuSettingsIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\PanelBackground.png" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +218,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icons\NotifyWhite.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\MenuItemAbout.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\MenuItemSettings.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

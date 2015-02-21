@@ -71,22 +71,22 @@ namespace SlackUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap MenuAboutIcon {
+        internal static System.Drawing.Icon MenuItemAbout {
             get {
-                object obj = ResourceManager.GetObject("MenuAboutIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("MenuItemAbout", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap MenuSettingsIcon {
+        internal static System.Drawing.Icon MenuItemSettings {
             get {
-                object obj = ResourceManager.GetObject("MenuSettingsIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("MenuItemSettings", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

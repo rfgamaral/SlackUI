@@ -39,8 +39,8 @@ namespace SlackUI {
             MenuItem menuItemExit = new MenuItem("Exit", menuItemExit_Click);
 
             // Add icons to the notification icon context menu items
-            vistaMenu.SetImage(menuItemSettings, Properties.Resources.MenuSettingsIcon);
-            vistaMenu.SetImage(menuItemAbout, Properties.Resources.MenuAboutIcon);
+            vistaMenu.SetImage(menuItemSettings, Properties.Resources.MenuItemSettings.ToBitmap());
+            vistaMenu.SetImage(menuItemAbout, Properties.Resources.MenuItemAbout.ToBitmap());
 
             // Set the show menu entry as default (bold)
             menuItemShow.DefaultItem = true;
