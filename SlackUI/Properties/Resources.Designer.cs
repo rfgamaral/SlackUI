@@ -73,6 +73,16 @@ namespace SlackUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon Application {
+            get {
+                object obj = ResourceManager.GetObject("Application", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon MenuItemAbout {
             get {
                 object obj = ResourceManager.GetObject("MenuItemAbout", resourceCulture);
@@ -126,16 +136,6 @@ namespace SlackUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("PanelBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon SlackUI {
-            get {
-                object obj = ResourceManager.GetObject("SlackUI", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
     }

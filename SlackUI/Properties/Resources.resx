@@ -121,6 +121,9 @@
   <data name="AboutLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\AboutLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Application" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icons\application.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MenuItemAbout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icons\menuitemabout.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,8 +141,5 @@
   </data>
   <data name="PanelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\PanelBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SlackUI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\icons\slackui.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

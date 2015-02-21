@@ -100,7 +100,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\Icons\SlackUI.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Icons\Application.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
@@ -202,7 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\Icons\SlackUI.ico" />
+    <None Include="Resources\Icons\Application.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\AboutLogo.png" />
