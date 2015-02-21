@@ -13,7 +13,7 @@ namespace SlackUI {
          */
         public BaseForm()
             : base() {
-            Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            Icon = Properties.Resources.SlackUI;
         }
 
         #endregion Public Constructors

@@ -128,5 +128,15 @@ namespace SlackUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon SlackUI {
+            get {
+                object obj = ResourceManager.GetObject("SlackUI", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
