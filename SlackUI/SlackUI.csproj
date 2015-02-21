@@ -179,7 +179,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Resources\Icons\SlackUI16.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -203,9 +202,6 @@
     <None Include="Resources\Icons\SlackUI.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icons\SlackUI16White.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\AboutLogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +215,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Styles\PageStyleOverride.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\NotifyColor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\NotifyWhite.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

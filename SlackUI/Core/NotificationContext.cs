@@ -8,6 +8,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using CefSharp;
 using wyDay.Controls;
@@ -60,8 +61,8 @@ namespace SlackUI {
             // Create a new instance of the notify icon
             notifyIcon = new NotifyIcon() {
                 ContextMenu = contextMenuNotifyIcon,
-                Icon = Program.Settings.Data.WhiteNotificationIcon ?
-                    Properties.Resources.SlackUI16White : Properties.Resources.SlackUI16,
+                Icon = new Icon(Program.Settings.Data.WhiteNotificationIcon ?
+                    Properties.Resources.NotifyWhite : Properties.Resources.NotifyColor, SystemInformation.SmallIconSize),
                 Text = Application.ProductName,
                 Visible = true,
             };

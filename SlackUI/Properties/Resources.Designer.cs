@@ -91,6 +91,26 @@ namespace SlackUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon NotifyColor {
+            get {
+                object obj = ResourceManager.GetObject("NotifyColor", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon NotifyWhite {
+            get {
+                object obj = ResourceManager.GetObject("NotifyWhite", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type Cascading Style Sheet (CSS).
         /// </summary>
         internal static string PageStyleOverride {
@@ -106,26 +126,6 @@ namespace SlackUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("PanelBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon SlackUI16 {
-            get {
-                object obj = ResourceManager.GetObject("SlackUI16", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon SlackUI16White {
-            get {
-                object obj = ResourceManager.GetObject("SlackUI16White", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
     }
