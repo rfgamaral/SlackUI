@@ -1,4 +1,12 @@
-﻿using System;
+﻿#region Copyright © 2014-2015 Ricardo Amaral
+
+/*
+ * Use of this source code is governed by an MIT-style license that can be found in the LICENSE file.
+ */
+
+#endregion
+
+using System;
 using System.Windows.Forms;
 
 namespace SlackUI {
