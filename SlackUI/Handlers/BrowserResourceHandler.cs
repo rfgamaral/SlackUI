@@ -15,12 +15,6 @@ namespace SlackUI {
 
     internal class BrowserResourceHandler : IResourceHandler {
 
-        #region Private Fields
-
-        private const int RetryRequestInterval = 500;
-
-        #endregion
-
         #region Private Methods
 
         /*
