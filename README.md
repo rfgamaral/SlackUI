@@ -2,7 +2,7 @@
 
 Slack for Windows - Unofficial, not affiliated with Slack Technologies.
 
-![SlackUI User Interface](http://rfgamaral.github.io/images/screenshots/slackui.jpg)
+![SlackUI User Interface](http://ricardoamaral.net/images/screenshots/slackui.jpg)
 
 SlackUI fills the missing gap on your Windows system with a dedicated Slack client bringing better integration with the underlying system. The main feature being the ability to lessen all distractions by minimizing the application to the notification area, while remaining easily accessible.
 
