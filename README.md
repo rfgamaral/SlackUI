@@ -1,4 +1,4 @@
-# SlackUI
+# [DEPRECATED] SlackUI
 
 Slack for Windows - Unofficial, not affiliated with Slack Technologies.
 
