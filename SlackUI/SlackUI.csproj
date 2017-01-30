@@ -130,11 +130,15 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Toaster">
+      <HintPath>..\Libraries\Toaster.dll</HintPath>
+    </Reference>
     <Reference Include="VistaMenu">
       <HintPath>..\Libraries\VistaMenu.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ChromiumNotification.cs" />
     <Compile Include="Extensions\ControlExtension.cs" />
     <Compile Include="Handlers\BrowserLifeSpanHandler.cs" />
     <Compile Include="Forms\BaseForm.cs" />
